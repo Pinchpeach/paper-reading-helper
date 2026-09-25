@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Paper Reading Helper",
+  "version": "0.3.0",
+  "description": "AI-assisted reading layer for research-paper PDFs.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "assets/background.js", "type": "module" },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["assets/content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_title": "Paper Reading Helper" }
+}
